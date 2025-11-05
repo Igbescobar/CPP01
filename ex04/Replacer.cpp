@@ -13,7 +13,7 @@ std::string Replacer::replaceIn(const std::string &content) const
 
 	std::string result;
 	std::size_t pos = 0;
-	std::size_t hit;
+	std::size_t hit = -1;
 
 	while (true)
 	{
@@ -24,7 +24,7 @@ std::string Replacer::replaceIn(const std::string &content) const
 			break ;
 		}
 		result.append(content, pos, hit - pos);
-		result.append(content, hit, _s2.size());
+		result.append(_s2);
 		pos = hit + _s1.length();
 	}
 	return (result);

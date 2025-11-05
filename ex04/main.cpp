@@ -1,3 +1,4 @@
+#include "File.hpp"
 #include <iostream>
 #include <string>
 
@@ -16,6 +17,9 @@ int	main(int argc, char **argv)
 		std::cerr << "<filename> and <string1> can not be empty>" << std::endl;
 		return (1);
 	}
-
+	Replacer replacer(str1, str2);
+	File file(filename, replacer);
+	if (!file.run())
+		return (1);
 	return (0);
 }

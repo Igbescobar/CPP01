@@ -7,7 +7,7 @@ class File
 {
   public:
 	File(const std::string &inputPath, const Replacer &replacer);
-	void run() const;
+	bool run() const;
 
   private:
 	std::string _inputPath;
